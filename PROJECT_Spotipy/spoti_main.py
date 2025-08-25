@@ -4,6 +4,9 @@ import pandas as pd
 import json
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
+from sqlalchemy import create_engine, text
+# No need to import
+from collections import Counter
 
 load_dotenv()
 
@@ -18,8 +21,31 @@ REDIRECT_URL = "https://example.com/callback"
 # Scopes ensure that Spotify users sharing data with third-party apps only share the information they consent to.
 # more on scopes in sotify documentation (https://developer.spotify.com/documentation/web-api/concepts/scopes)
 SCOPE = "user-top-read"
-def main():
 
+SQL_USER = os.getenv("SQL_USER")
+SQL_PASSWORD = os.getenv("SQL_PASSWORD")
+SQL_HOST = os.getenv("SQL_HOST")
+SQL_DB = os.getenv("SQL_DB")
+ENGINE_LINK = f"mysql+pymysql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}"
+
+engine = create_engine(ENGINE_LINK)
+
+QUERY = """
+            SELECT *
+            FROM doctors
+        """
+
+def connect_to_sql():
+    try:
+        with engine.connect() as conn:
+            print("Connected to DB")
+            # dataframe to have tabular structure 
+            df = pd.read_sql(text(QUERY), conn)
+            print(df)
+    except Exception as e:
+        print("Connection failed:", e)
+
+def main():
     auth_manager=SpotifyOAuth(
         client_id=CLIENT_ID,
         client_secret=CLIENT_SECRET,
