@@ -30,9 +30,10 @@ ENGINE_LINK = f"mysql+pymysql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}"
 
 engine = create_engine(ENGINE_LINK)
 
+# Normalized already No Transative and Partial dependencies
 QUERY = """
             SELECT *
-            FROM doctors
+            FROM table
         """
 
 def connect_to_sql():
