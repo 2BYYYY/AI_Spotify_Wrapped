@@ -2,9 +2,9 @@ import spotipy
 import os
 import pandas as pd
 import json
+# from sql_main import connect_to_sql
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
-from sqlalchemy import create_engine, text
 # No need to import
 from collections import Counter
 
@@ -21,30 +21,6 @@ REDIRECT_URL = "https://example.com/callback"
 # Scopes ensure that Spotify users sharing data with third-party apps only share the information they consent to.
 # more on scopes in sotify documentation (https://developer.spotify.com/documentation/web-api/concepts/scopes)
 SCOPE = "user-top-read"
-
-SQL_USER = os.getenv("SQL_USER")
-SQL_PASSWORD = os.getenv("SQL_PASSWORD")
-SQL_HOST = os.getenv("SQL_HOST")
-SQL_DB = os.getenv("SQL_DB")
-ENGINE_LINK = f"mysql+pymysql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}"
-
-engine = create_engine(ENGINE_LINK)
-
-# Normalized already No Transative and Partial dependencies
-QUERY = """
-            SELECT *
-            FROM table
-        """
-
-def connect_to_sql():
-    try:
-        with engine.connect() as conn:
-            print("Connected to DB")
-            # dataframe to have tabular structure 
-            df = pd.read_sql(text(QUERY), conn)
-            print(df)
-    except Exception as e:
-        print("Connection failed:", e)
 
 def main():
     auth_manager=SpotifyOAuth(
@@ -93,6 +69,7 @@ def main():
                         "top_artist_name": artist_name})
 
     df = pd.DataFrame(track_data)   
-    df.to_csv("wrapped-grind-2025.csv", index=False)
+    # via the volumes (initialize the volumes first in the .yaml file to show the folder)
+    df.to_csv("/opt/airflow/PROJECT_Spotipy/wrapped-grind-2025.csv", index=False)
 if __name__ == "__main__":
     main()
