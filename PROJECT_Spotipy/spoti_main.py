@@ -5,8 +5,7 @@ import json
 # from sql_main import connect_to_sql
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
-# No need to import
-from collections import Counter
+from sql_main import connect_to_sql
 
 load_dotenv()
 
@@ -50,7 +49,6 @@ def main():
     # Formatting API response
     formatted_json_tracks = json.dumps(top_tracks, indent=4)  
     formatted_json_artist = json.dumps(top_artist, indent=4)  
-
     # November 27, 2024
     # Web API use cases will no longer be able to access or use the following endpoints and functionality in their third-party applications. 
     # audio_features = sp.audio_features(tracks=[track["id"] for track in top_tracks["items"]])
@@ -67,9 +65,10 @@ def main():
         artist_name = artist["name"]
         track_data.append({"top_track_name": f"({track_artist_name}) {track_name}",
                         "top_artist_name": artist_name})
-
+        connect_to_sql(track_name, track_artist_name, 1, artist_name, 1)
     df = pd.DataFrame(track_data)   
     # via the volumes (initialize the volumes first in the .yaml file to show the folder)
     df.to_csv("/opt/airflow/PROJECT_Spotipy/wrapped-grind-2025.csv", index=False)
+
 if __name__ == "__main__":
     main()

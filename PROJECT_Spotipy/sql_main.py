@@ -11,24 +11,42 @@ SQL_USER = os.getenv("SQL_USER")
 SQL_PASSWORD = os.getenv("SQL_PASSWORD")
 SQL_HOST = os.getenv("SQL_HOST")
 SQL_DB = os.getenv("SQL_DB")
+# Normalized already No Transative and Partial dependencies
+SQL_QUERY_ARTIST = os.getenv("SQL_QUERY_ARTIST")
+SQL_QUERY_TRACK = os.getenv("SQL_QUERY_TRACK")
 ENGINE_LINK = f"mysql+pymysql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}"
 
 engine = create_engine(ENGINE_LINK)
 
-# Normalized already No Transative and Partial dependencies
-QUERY = """
-            SELECT *
-            FROM table
-        """
-
-def connect_to_sql():
+def connect_to_sql(top_tracks, top_tracks_artist, count_tracks, top_artist, count_artist):
     try:
         with engine.connect() as conn:
             print("Connected to DB")
-            # dataframe to have tabular structure 
-            df = pd.read_sql(text(QUERY), conn)
-            print(df)
+
+            conn.execute(
+                # if there are dups update else insert
+                text(SQL_QUERY_ARTIST),
+                # to avoid sql injects
+                {
+                    "artist_name": top_artist, 
+                    "artist_count": count_artist
+                }
+            )
+
+            conn.execute(
+                text(SQL_QUERY_TRACK),
+                {
+                    "artist_name": top_tracks_artist,
+                    "track_name": top_tracks,
+                    "count_tracks": count_tracks
+                }
+            )
+
+            conn.commit()
+            print("Upsert successful for artist and track")
+
     except Exception as e:
         print("Connection failed:", e)
         
-print(__name__)
+if __name__ == "__main__":
+    connect_to_sql()
