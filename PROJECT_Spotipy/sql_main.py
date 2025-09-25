@@ -20,7 +20,8 @@ engine = create_engine(ENGINE_LINK)
 
 def connect_to_sql(top_tracks, top_tracks_artist, count_tracks, top_artist, count_artist):
     try:
-        with engine.connect() as conn:
+        # same as connect(), but starts a transaction automatically and commits/rolls back when the block ends.
+        with engine.begin() as conn:
             print("Connected to DB")
 
             conn.execute(
@@ -41,9 +42,7 @@ def connect_to_sql(top_tracks, top_tracks_artist, count_tracks, top_artist, coun
                     "count_tracks": count_tracks
                 }
             )
-
-            conn.commit()
-            print("Upsert successful for artist and track")
+            print("successful for artist and track")
 
     except Exception as e:
         print("Connection failed:", e)

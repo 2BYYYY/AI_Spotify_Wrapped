@@ -5,7 +5,7 @@ import json
 # from sql_main import connect_to_sql
 from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
-from sql_main import connect_to_sql
+from .sql_main import connect_to_sql
 
 load_dotenv()
 
@@ -65,6 +65,7 @@ def main():
         artist_name = artist["name"]
         track_data.append({"top_track_name": f"({track_artist_name}) {track_name}",
                         "top_artist_name": artist_name})
+        print("sql here")
         connect_to_sql(track_name, track_artist_name, 1, artist_name, 1)
     df = pd.DataFrame(track_data)   
     # via the volumes (initialize the volumes first in the .yaml file to show the folder)
