@@ -1,11 +1,3 @@
-import os
-import sys
-
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-
-if project_root not in sys.path:
-    sys.path.insert(0, project_root)
-
 from PROJECT_Spotipy.spoti_main import main
 from airflow import DAG
 from datetime import datetime
@@ -61,7 +53,7 @@ send_email_task = EmailOperator(
     to=['tobyyjavelona@gmail.com'],
     subject='Spotify Wrapped 2025',
     html_content='Please find attached the Spotify Wrapped 2025 CSV file.',
-    files=["wrapped-grind-2025.csv"], 
+    files=["/opt/airflow/PROJECT_Spotipy/wrapped-grind-2025.csv"], 
     conn_id='smtp',
     dag=dag,
 )
