@@ -18,7 +18,15 @@ ENGINE_LINK = f"mysql+pymysql://{SQL_USER}:{SQL_PASSWORD}@{SQL_HOST}/{SQL_DB}"
 
 engine = create_engine(ENGINE_LINK)
 
-def connect_to_sql(top_tracks, top_tracks_artist, count_tracks, top_artist, count_artist):
+def check_engine_connection():
+    try:
+        with engine.connect() as conn:
+            result = conn.execute(text("SELECT 1"))
+            print("✅ Connected:", result.scalar())
+    except Exception as e:
+        print("❌ Not connected:", e)
+
+def connect_to_sql(top_tracks: str, top_tracks_artist: str, count_tracks: int, top_artist: str, count_artist: int):
     try:
         # same as connect(), but starts a transaction automatically and commits/rolls back when the block ends.
         with engine.begin() as conn:
