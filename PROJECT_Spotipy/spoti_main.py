@@ -21,25 +21,28 @@ REDIRECT_URL = "https://example.com/callback"
 # more on scopes in sotify documentation (https://developer.spotify.com/documentation/web-api/concepts/scopes)
 SCOPE = "user-top-read"
 
-def main():
-    auth_manager=SpotifyOAuth(
-        client_id=CLIENT_ID,
-        client_secret=CLIENT_SECRET,
-        redirect_uri=REDIRECT_URL,
-        scope=SCOPE,
-        
-    )
+def spotipy_initialization():
     try:
+        auth_manager=SpotifyOAuth(
+            client_id=CLIENT_ID,
+            client_secret=CLIENT_SECRET,
+            redirect_uri=REDIRECT_URL,
+            scope=SCOPE,
+            
+        )
         auth_manager.refresh_access_token(REFRESH_TOKEN)
         access_token = auth_manager.get_access_token(as_dict=False)
-        sp = spotipy.Spotify(auth=access_token)
+        spotipy_connection = spotipy.Spotify(auth=access_token)
     # (EXCEPTION) SpotifyException via spotipy documentation
     except spotipy.SpotifyException as e:
         print(f"Error refreshing access token: {e}")
         # Handle token expiration or revocation here
         # For example, you can log the error and exit the script
         raise
+    return spotipy_connection
 
+def main():
+    sp = spotipy_initialization()
     # returns the json
     # short_term → last 4 weeks
     # medium_term → last 6 months
@@ -63,13 +66,15 @@ def main():
 
         # For top artists
         artist_name = artist["name"]
-        track_data.append({"top_track_name": f"({track_artist_name}) {track_name}",
-                        "top_artist_name": artist_name})
-        print("sql here")
+        track_data.append(
+                            {
+                                "top_track_name": f"({track_artist_name}) {track_name}",
+                                "top_artist_name": artist_name
+                            }
+                        )
         connect_to_sql(track_name, track_artist_name, 1, artist_name, 1)
     df = pd.DataFrame(track_data)   
     # via the volumes (initialize the volumes first in the .yaml file to show the folder)
-    df.to_csv("/opt/airflow/PROJECT_Spotipy/wrapped-grind-2025.csv", index=False)
-
+    df.to_csv("wrapped-grind-2025.csv", index=False)
 if __name__ == "__main__":
     main()
