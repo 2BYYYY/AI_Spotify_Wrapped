@@ -22,9 +22,12 @@ def check_engine_connection():
     try:
         with engine.connect() as conn:
             result = conn.execute(text("SELECT 1"))
-            print("✅ Connected:", result.scalar())
+            # a single value (first column, first row)
+            print(f"[CONNECTED] test_engine_connection value: {result.scalar()}")
+            return True
     except Exception as e:
-        print("❌ Not connected:", e)
+        print(f"[NOT CONNECTED] test_engine_connection: {e}")
+        raise
 
 def connect_to_sql(top_tracks: str, top_tracks_artist: str, count_tracks: int, top_artist: str, count_artist: int):
     try:
@@ -50,10 +53,11 @@ def connect_to_sql(top_tracks: str, top_tracks_artist: str, count_tracks: int, t
                     "count_tracks": count_tracks
                 }
             )
-            print("successful for artist and track")
+            print("[SUCCESSFUL] connect_to_sql")
 
     except Exception as e:
-        print("Connection failed:", e)
+        print("[NOT SUCCESSFUL] connect_to_sql:", e)
+        raise
         
 if __name__ == "__main__":
     connect_to_sql()
