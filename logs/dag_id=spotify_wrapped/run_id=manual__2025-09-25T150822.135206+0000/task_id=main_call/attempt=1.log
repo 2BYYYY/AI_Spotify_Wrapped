@@ -1,0 +1,33 @@
+{"timestamp":"2025-09-25T15:08:24.314720","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-09-25T15:08:24.317059","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/p_spotipy.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-25T15:08:27.061802Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.093904Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.104919Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.109901Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.111450Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.114292Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.119440Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.120037Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.122780Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.127227Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.127877Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.130654Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.137159Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.137867Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.143403Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.148475Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.149147Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.152700Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.157241Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.157842Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.161451Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.166353Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.167766Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.170838Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.175784Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.176337Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.180356Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.185019Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.185576Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.189614Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T15:08:27.196882","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

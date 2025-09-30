@@ -1,0 +1,23 @@
+{"timestamp":"2025-09-23T00:21:26.542042","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-09-23T00:21:26.543986","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/p_spotipy.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-23T00:21:31.468133Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.469109Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.473378Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.473890Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.474392Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.474840Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.475258Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.475564Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.476424Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.476869Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.477245Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.477525Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.477872Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.478578Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.479061Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.480504Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.480947Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.481281Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.481815Z","level":"info","event":"Connection failed: (pymysql.err.OperationalError) (2003, \"Can't connect to MySQL server on '127.0.0.1' ([Errno 111] Connection refused)\")","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.482216Z","level":"info","event":"(Background on this error at: https://sqlalche.me/e/14/e3q8)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-23T00:21:31.490953","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
