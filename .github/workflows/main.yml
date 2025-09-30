@@ -1,0 +1,42 @@
+name: test_cases
+
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix: 
+        python-version: [3.11]
+
+    env:
+      APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
+      CLIENT_ID: ${{ secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+      DOCKER_HOST: ${{ secrets.DOCKER_HOST }}
+      LOCAL_HOST: ${{ secrets.LOCAL_HOST }}
+      SPOTIFY_REFRESH_TOKEN: ${{ secrets.SPOTIFY_REFRESH_TOKEN }}
+      SQL_DB: ${{ secrets.SQL_DB }}
+      SQL_PASSWORD: ${{ secrets.SQL_PASSWORD }}
+      SQL_QUERY_ARTIST: ${{ secrets.SQL_QUERY_ARTIST }}
+      SQL_QUERY_TRACK: ${{ secrets.SQL_QUERY_TRACK }}
+      SQL_USER: ${{ secrets.SQL_USER }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies 
+        run: | 
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          
+      - name: Run test cases
+        run: python -m PROJECT_Spotipy.PROJECT_Test.test_main
