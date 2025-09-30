@@ -11,4 +11,5 @@ def test_spotipy_initialization():
     assert user["id"] == "odu3ro26f7yhha2gkomh0tdq0"
 
 if __name__ == "__main__":
+    # test this first
     test_spotipy_initialization()
