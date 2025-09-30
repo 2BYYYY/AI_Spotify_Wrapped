@@ -9,7 +9,8 @@ from sqlalchemy import create_engine, text
 
 SQL_USER = os.getenv("SQL_USER")
 SQL_PASSWORD = os.getenv("SQL_PASSWORD")
-SQL_HOST = os.getenv("SQL_HOST")
+# Change host to either local or docker 
+SQL_HOST = os.getenv("DOCKER_HOST")
 SQL_DB = os.getenv("SQL_DB")
 # Normalized already No Transative and Partial dependencies
 SQL_QUERY_ARTIST = os.getenv("SQL_QUERY_ARTIST")
