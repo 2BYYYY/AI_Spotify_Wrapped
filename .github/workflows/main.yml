@@ -12,6 +12,8 @@ jobs:
       matrix: 
         python-version: [3.11]
 
+    environment: SPOTIPY
+
     env:
       APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
       CLIENT_ID: ${{ secrets.CLIENT_ID }}
