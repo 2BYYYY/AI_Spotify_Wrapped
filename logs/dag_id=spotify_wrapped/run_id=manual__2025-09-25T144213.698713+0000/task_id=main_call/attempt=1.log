@@ -1,0 +1,15 @@
+{"timestamp":"2025-09-25T14:42:22.732529","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-09-25T14:42:22.822161","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/p_spotipy.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-25T14:42:44.656372Z","level":"info","event":"Connected to DB","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.672414Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.678084Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.696883Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.700888Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.704103Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.706565Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.718736Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.720282Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.724922Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.726799Z","level":"info","event":"sql here","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:44.729609Z","level":"info","event":"successful for artist and track","chan":"stdout","logger":"task"}
+{"timestamp":"2025-09-25T14:42:43.627873","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}

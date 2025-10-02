@@ -1,0 +1,3 @@
+{"timestamp":"2025-09-17T00:53:44.228815","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-09-17T00:53:44.229565","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/p_spotipy.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-09-17T00:53:44.901373","level":"info","event":"Connection Retrieved 'smtp'","logger":"airflow.hooks.base"}
